@@ -1,11 +1,8 @@
-"""
-WSGI config for smartdjangorest project.
-
-It exposes the WSGI callable as a module-level variable named ``application``.
-
-For more information on this file, see
-https://docs.djangoproject.com/en/3.1/howto/deployment/wsgi/
-"""
+#
+#  Project SmartDjango REST
+#  Copyright (c) Alessio Saltarin 2021
+#  This software is licensed under MIT license
+#
 
 import os
 

@@ -1,0 +1,23 @@
+/*
+ *
+ * Project SmartDjango REST
+ * Copyright (c) Alessio Saltarin 2021
+ * This software is licensed under MIT license
+ *
+ */
+
+body {
+    font-family: 'Cabin', sans-serif;
+}
+
+#jumbo {
+    margin-top: 1em;
+}
+
+.starter-template {
+    text-align: center;
+    margin-top: 6em;
+}
+
+
+
