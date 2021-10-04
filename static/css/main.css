@@ -10,8 +10,20 @@ body {
     font-family: 'Cabin', sans-serif;
 }
 
-#jumbo {
-    margin-top: 1em;
+.jumbotron {
+    padding: 2rem 1rem;
+    margin: 1rem 0 5rem 0;
+    background-color: #eeeeee;
+    border-radius: .3rem;
+    display: block;
+}
+
+.spacer {
+    margin-top: 50px;
+}
+
+.jumbotitle {
+    font-weight: bold;
 }
 
 .starter-template {

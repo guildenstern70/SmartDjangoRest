@@ -1,27 +1,39 @@
-{% extends "skeleton.html" %}
-
-{% block title %}
-    <!--
+<!--
   ~
   ~ Project SmartDjango REST
   ~ Copyright (c) Alessio Saltarin 2021
   ~ This software is licensed under MIT license
   ~
   -->
+{% extends "skeleton.html" %}
 
-<title>{{ title }}</title>
+{% block title %}
+    <title>{{ title }}</title>
 {% endblock %}
 
 {% block content %}
-    <div class="jumbotron" id="jumbo">
-        <h1 class="display-4" id="project">SmartDjango REST edition</h1>
-        <p class="lead text-primary">Welcome to SmartDjango REST, a Django 3 template.</p>
-        <hr class="my-4">
-        <p>It uses Django REST Framework, Bootstrap and SqlLite.</p>
-        <a class="btn btn-primary btn-lg" href="/api/v1" role="button">Explore APIs</a>
-        &nbsp;
-        <a class="btn btn-success btn-lg" href="/swagger-ui" role="button">Swagger UI</a>
-        <br/><br/>
-        <small><a href="/admin">Administration</a></small>
-    </div>
+    <div class="row spacer">
+            <div class="col-2">
+                &nbsp;
+            </div>
+            <div class="col-8">
+                <div class="container mt-5">
+                    <div class="jumbotron border">
+                        <h2 class="display-5 jumbotitle text-primary">SmartDjango REST edition</h2>
+                        <p class="lead">It uses Django REST Framework, Bootstrap and SqlLite.</p>
+                        <span class="spacer">&nbsp;</span>
+                        <div class="mt-4">
+                            <a class="btn btn-primary btn-lg" href="/api/v1" role="button">Explore API</a>
+                            &nbsp;
+                            <a class="btn btn-success btn-lg" href="/swagger-ui" role="button">Swagger</a>
+                            <br/><br/>
+                            <small><a href="/admin">Administration</a></small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                &nbsp;
+            </div>
+        </div>
 {% endblock %}
