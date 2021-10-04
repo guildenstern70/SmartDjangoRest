@@ -1,4 +1,6 @@
-## SmartDjango REST edition
+# SmartDjango REST edition
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A Django REST template.
 Template solution for Django Web App with:
@@ -8,11 +10,11 @@ Template solution for Django Web App with:
 2. Bootstrap v.4+
 3. SQLite
 
-### Download required libraries
+## Download required libraries
 
     pip install -r requirements.txt
 
-### Install DB
+## Install DB
 
     python manage.py createsuperuser --email admin@example.com --username admin
     python manage.py migrate
@@ -20,7 +22,7 @@ Template solution for Django Web App with:
     python manage.py migrate smartdjangorest
     python manage.py populate_db
 
-### Run
+## Run
 
     python manage.py runserver
 
