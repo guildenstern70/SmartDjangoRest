@@ -27,7 +27,9 @@
     <link rel="stylesheet" type="text/css" href="{% static "css/main.css" %}">
 
     {% block pagecss %}{% endblock %}
-    {% block title %}{% endblock %}
+    {% block title %}
+    <title> SmartDjangoREST | {{ title }} </title>
+    {% endblock %}
 
 </head>
 <body>

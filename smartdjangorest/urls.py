@@ -19,6 +19,8 @@ router.register(r'books', views.BookViewSet)
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('books', views.books, name='books'),
+    path('addnewbook', views.addnewbook, name='addnewbook'),
     path('api/v1/', include(router.urls)),
     path('admin/', admin.site.urls),
     path('openapi-schema', get_schema_view(
