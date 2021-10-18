@@ -3,13 +3,13 @@
 #  Copyright (c) Alessio Saltarin 2021
 #  This software is licensed under MIT license
 #
-from django.http import Http404
 from rest_framework import viewsets
 from rest_framework.response import Response
-from rest_framework.views import APIView
 
+from smartdjangorest.dao import get_book_by_author
 from smartdjangorest.models import Book
 from smartdjangorest.serializers import BookSerializer
+from rest_framework.decorators import action
 
 import logging
 
@@ -19,26 +19,18 @@ logger = logging.getLogger(__name__)
 
 class BookViewSet(viewsets.ModelViewSet):
     """
-    API endpoint that allows books to be viewed or edited.
+    API endpoints that allows books to be viewed or edited.
     """
     queryset = Book.objects.all().order_by('title')
     serializer_class = BookSerializer
 
-
-class BooksByAuthor(APIView):
-    """
-    API endpoint to retrieve books by author
-    """
-    def get(self, request, author, format=None):
+    @action(methods=['get'], detail=False, url_path='by_author/(?P<author>[^/.]+)')
+    def get_by_author(self, request, author):
+        """
+        API endpoint to get books by author
+        """
         logger.info('Looking books with author = ' + author)
-        filtered_books = _get_book_by_author(author)
+        filtered_books = get_book_by_author(author)
         logger.info('Found books: ' + str(filtered_books))
         serializer = BookSerializer(filtered_books, many=True)
         return Response(serializer.data)
-
-
-def _get_book_by_author(author):
-    try:
-        return Book.objects.filter(author__contains=author)
-    except Book.DoesNotExist:
-        raise Http404
