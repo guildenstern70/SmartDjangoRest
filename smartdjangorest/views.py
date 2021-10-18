@@ -6,10 +6,8 @@
 
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
-from rest_framework import viewsets
 
 from smartdjangorest.models import Book
-from smartdjangorest.serializers import BookSerializer
 import logging
 
 
@@ -68,10 +66,3 @@ def addnewbook(request):
         }
         return HttpResponse(template.render(context, request))
 
-
-class BookViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows books to be viewed or edited.
-    """
-    queryset = Book.objects.all().order_by('title')
-    serializer_class = BookSerializer

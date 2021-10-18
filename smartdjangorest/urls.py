@@ -10,19 +10,23 @@ from django.views.generic import TemplateView
 from rest_framework import routers
 from rest_framework.schemas import get_schema_view
 
-from smartdjangorest import views
+from smartdjangorest import views, apiviews
 
 
+# DEFAULT API URLS
 router = routers.DefaultRouter()
-router.register(r'books', views.BookViewSet)
+router.register(r'books', apiviews.BookViewSet)
 
 
 urlpatterns = [
+    # HTML VIEWS
     path('', views.index, name='index'),
     path('books', views.books, name='books'),
     path('addnewbook', views.addnewbook, name='addnewbook'),
-    path('api/v1/', include(router.urls)),
     path('admin/', admin.site.urls),
+    # API VIEWS
+    path('api/v1/books/<str:author>/', apiviews.BooksByAuthor.as_view()),
+    path('api/v1/', include(router.urls)),
     path('openapi-schema', get_schema_view(
             title="SmartDjango REST",
             description="API for SmartDjango",
@@ -32,6 +36,5 @@ urlpatterns = [
         template_name='swagger_ui.html',
         extra_context={'schema_url': 'openapi-schema'}
     ), name='swagger-ui'),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
 
