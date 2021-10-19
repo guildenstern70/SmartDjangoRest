@@ -2,8 +2,8 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-A Django REST template with Redoc and Swagger UI.
-Template solution for Django Web App with:
+A Django REST template with support to JWT, Redoc and Swagger UI.
+Template solution for Django Web App built with:
 
 1. Django v.3+
 2. Django Framework v.3+   
