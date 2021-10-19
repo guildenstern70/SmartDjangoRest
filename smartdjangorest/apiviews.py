@@ -4,17 +4,25 @@
 #  This software is licensed under MIT license
 #
 from rest_framework import viewsets
-from rest_framework.response import Response
-
 from smartdjangorest.dao import get_book_by_author
 from smartdjangorest.models import Book
 from smartdjangorest.serializers import BookSerializer
 from rest_framework.decorators import action
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from rest_framework.reverse import reverse
 
 import logging
 
 
 logger = logging.getLogger(__name__)
+
+
+@api_view(['GET'])
+def api_root(request, format=None):
+    return Response({
+        'books': reverse('book-api', request=request, format=format),
+    })
 
 
 class BookViewSet(viewsets.ModelViewSet):

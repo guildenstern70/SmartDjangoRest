@@ -14,6 +14,8 @@ from smartdjangorest import views, apiviews, settings
 
 import logging
 
+from smartdjangorest.apiviews import api_root
+
 logger = logging.getLogger(__name__)
 
 # API FOR RESOURCES
@@ -29,17 +31,17 @@ def list_urls(lis, acc=None):
         acc = []
     if not lis:
         return
-    l = lis[0]
-    if isinstance(l, URLPattern):
-        yield acc + [str(l.pattern)]
-    elif isinstance(l, URLResolver):
-        yield from list_urls(l.url_patterns, acc + [str(l.pattern)])
+    first_list = lis[0]
+    if isinstance(first_list, URLPattern):
+        yield acc + [str(first_list.pattern)]
+    elif isinstance(first_list, URLResolver):
+        yield from list_urls(first_list.url_patterns, acc + [str(first_list.pattern)])
     yield from list_urls(lis[1:], acc)
 
 
 urlpatterns = [
     # API RESOURCEFUL VIEWS
-    path('api/v1/', include(router.urls)),
+    path('api/v1/', include(router.urls), name='book-api'),
     # HTML VIEWS
     path('', views.index, name='index'),
     path('books', views.books, name='books'),
