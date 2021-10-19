@@ -2,13 +2,14 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-A Django REST template.
+A Django REST template with Redoc and Swagger UI.
 Template solution for Django Web App with:
 
 1. Django v.3+
 2. Django Framework v.3+   
-2. Bootstrap v.4+
-3. SQLite
+3. Bootstrap v.4+
+4. SQLite
+5. Spectacular
 
 ## Download required libraries
 
