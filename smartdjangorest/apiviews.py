@@ -3,7 +3,7 @@
 #  Copyright (c) Alessio Saltarin 2021
 #  This software is licensed under MIT license
 #
-from rest_framework import viewsets
+from rest_framework import viewsets, permissions
 from smartdjangorest.dao import get_book_by_author
 from smartdjangorest.models import Book
 from smartdjangorest.serializers import BookSerializer
@@ -30,6 +30,7 @@ class BookViewSet(viewsets.ModelViewSet):
     API endpoints that allows books to be viewed or edited.
     """
     queryset = Book.objects.all().order_by('title')
+    permission_classes = [permissions.IsAuthenticated]
     serializer_class = BookSerializer
 
     @action(methods=['get'], detail=False, url_path='by_author/(?P<author>[^/.]+)')

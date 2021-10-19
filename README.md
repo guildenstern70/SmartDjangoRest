@@ -22,7 +22,25 @@ Template solution for Django Web App with:
     python manage.py migrate smartdjangorest
     python manage.py populate_db
 
+## Explore URLs
+
+    python manage.py installed_urls
+
 ## Run
 
     python manage.py runserver
 
+## JWT
+
+1. Add user using Django Admin interface
+2. Get token using 
+
+       curl -X 'POST' \
+         'http://127.0.0.1:8000/api/v1/token/' \
+         -H 'accept: application/json' \
+         -d '{
+         "username": "your_username",
+         "password": "your_password"
+       }'
+
+3. 
