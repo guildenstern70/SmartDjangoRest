@@ -4,12 +4,12 @@
 #  This software is licensed under MIT license
 #
 
+import logging
+
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 
 from smartdjangorest.models import Book
-import logging
-
 
 logger = logging.getLogger(__name__)
 

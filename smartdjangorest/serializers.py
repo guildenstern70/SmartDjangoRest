@@ -12,5 +12,3 @@ class BookSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Book
         fields = ['id', 'author', 'title', 'pages', 'isbn']
-
-

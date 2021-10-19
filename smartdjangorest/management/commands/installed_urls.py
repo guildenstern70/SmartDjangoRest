@@ -3,10 +3,10 @@
 #  Copyright (c) Alessio Saltarin 2021
 #  This software is licensed under MIT license
 #
+import logging
+
 from django.core.management import BaseCommand
 from django.urls import URLPattern, URLResolver
-
-import logging
 
 from smartdjangorest import settings
 
