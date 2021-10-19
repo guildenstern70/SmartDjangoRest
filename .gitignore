@@ -1,3 +1,6 @@
 env/
 .idea/
+smartdjangorest/static/admin
+smartdjangorest/static/rest_framework
+db.sqlite3
 SmartDjango/realsettings.py

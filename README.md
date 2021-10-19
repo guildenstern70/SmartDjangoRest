@@ -44,4 +44,15 @@ Template solution for Django Web App built with:
          "password": "your_password"
        }'
 
-3. 
+
+## Docker
+
+Create image:
+
+    docker build -t smart-django-rest:1 .
+    
+Run it:
+
+    docker run -p 8080:8080 smart-django-rest:1
+
+   
